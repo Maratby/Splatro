@@ -1,0 +1,13 @@
+{
+	"id": "Splalatro",
+	"name": "Splalatro",
+	"display_name": "Splalatro",
+	"author": ["RanaPerCognome, Maratby"],
+	"description": "Balatro content mod featuring Splatoon",
+	"prefix": "splat",
+	"main_file": "Splalatro.lua",
+	"priority": 333,
+	"badge_colour": "fea21e",
+	"badge_text_colour": "FFFFFF",
+	"version": "0.1.0",
+}
