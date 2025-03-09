@@ -47,11 +47,8 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         if context.after and (G.GAME.chips + hand_chips * mult) > G.GAME.blind.chips then
-            print("pass")
             local text, disp_text, poker_hands, scoring_hand, non_loc_disp_text = G.FUNCS.get_poker_hand_info(G.play
                 .cards)
-            print(#scoring_hand)
-            print(G.GAME.current_round.hands_left)
             local loops = math.min(G.GAME.current_round.hands_left, #scoring_hand)
             G.E_MANAGER:add_event(Event({
                 trigger = 'after',
