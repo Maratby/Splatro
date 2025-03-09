@@ -157,7 +157,7 @@ SMODS.Joker {
                     end
                 end
                 for i = 1, #G.hand.cards do
-                    if not G.hand.ards[i].debuffed then
+                    if not G.hand.cards[i].debuffed then
                         local percent = 0.85 + (i - 0.999) / (#G.hand.cards - 0.998) * 0.3
                         G.E_MANAGER:add_event(Event({
                             trigger = 'after',
