@@ -443,7 +443,7 @@ SMODS.ColorChip {
     end,
 }
 
-SMODS.ColorChip {
+SMODS.ColorChip { 
     key = 'range_8F',
     name = 'Range-8F',
     atlas = "color_chips",
@@ -452,15 +452,18 @@ SMODS.ColorChip {
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.cardselection } }
     end,
-    add_to_deck = function(self, card, from_debuff)
-        G.hand.config.highlighted_limit = G.hand.config.highlighted_limit + card.ability.cardselection
-    end,
-    remove_from_deck = function(self, card, from_debuff)
-        G.hand.config.highlighted_limit = G.hand.config.highlighted_limit - card.ability.cardselection
-        G.hand:unhighlight_all()
-        if not from_debuff then
+    calculate = function(self, card, context, from_debuff)
+        if not from_debuff and (context.selling_card or context.joker_type_destroyed) then -- "This is probably janky. But [WOOMY] it. We ball." Signed, Wildcard Arya.
             G.GAME.drone_tally = (G.GAME.drone_tally or 0) + 1
         end
+    end,
+    add_to_deck = function(self, card)
+        SMODS.change_play_limit(card.ability.cardselection) -- "Sorry, Aikoyori. Gonna steal some code rq." Signed, Wildcard Arya. 
+        SMODS.change_discard_limit(card.ability.cardselection)
+    end,
+    remove_from_deck = function(self, card)
+        SMODS.change_play_limit(-card.ability.cardselection)
+        SMODS.change_discard_limit(-card.ability.cardselection)
     end,
 }
 
