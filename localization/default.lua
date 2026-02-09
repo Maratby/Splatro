@@ -9,6 +9,8 @@ return {
 			["k_c_chip_pack"] = "Chip Pack",
 			["k_spectrum_chip"] = "Spectrum Chip",
 			["k_double_st"] = "Double!",
+			ph_you_win = "TEST PASSED!",
+            ph_game_over= "TEST FAILED!",
 		},
 	},
 	["descriptions"] = {
