@@ -10,7 +10,7 @@ SMODS.Consumable {
         return { vars = { card.ability.extra.cards } }
     end,
     use = function(self, card, area, copier)
-        for i = 1, math.min(card.ability.extra.cards, G.consumeables.config.card_limit - #G.consumeables.cards) do
+        if #G.consumeables.cards < G.consumeables.config.card_limit then
             G.E_MANAGER:add_event(Event({
                 trigger = 'after',
                 delay = 0.4,
