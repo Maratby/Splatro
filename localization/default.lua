@@ -9,8 +9,6 @@ return {
 			["k_c_chip_pack"] = "Chip Pack",
 			["k_spectrum_chip"] = "Spectrum Chip",
 			["k_double_st"] = "Double!",
-			ph_you_win = "TEST PASSED!",
-            ph_game_over= "TEST FAILED!",
 		},
 	},
 	["descriptions"] = {
@@ -150,6 +148,23 @@ return {
 				["text"] = {
 					"Applies {C:attention}Order Seal{} to",
 					"{C:attention}#1#{} selected cards",
+				},
+			},
+			["c_splat_smollusk"] = {
+				["name"] = "Smollusk",
+				["text"] = {
+					"Add {C:dark_edition}Foil{}, {C:dark_edition}Holographic{} or {C:dark_edition}Polychrome{}",
+					"to 1 selected {C:attention}Joker{},",
+					"{C:red}Destroy{} all held consumables",
+				},
+			},
+			["c_splat_ricochet"] = {
+				["name"] = "Ricochet",
+				["text"] = {
+					"{C:green}50%{} chance to create a {C:dark_edition}Negative{} copy",
+					"of selected {C:attention}Consumable{}",
+					"otherwise {C:red}destroy{} it",
+					"{C:inactive}(can't copy self)",
 				},
 			},
 		},
