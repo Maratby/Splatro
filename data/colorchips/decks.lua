@@ -1,7 +1,7 @@
 SMODS.Back {
 	key = "spire_deck",
 	pos = { x = 0, y = 0 },
-    atlas = "SplatDecks",
+	atlas = "SplatDecks",
 	unlocked = true,
 	discovered = true,
 	config = { rounds = 3, tally = 0 },
@@ -14,18 +14,68 @@ SMODS.Back {
 				G.GAME.win_ante = G.GAME.win_ante + 1
 				G.consumeables.config.card_limit = G.consumeables.config.card_limit + 1
 				G.GAME.used_vouchers.v_splat_palette = true
+				save_run()
 				---splat_redeem_voucher("v_splat_palette", 0.3)
 				return true
 			end
 		}))
 	end,
-    calculate = function(self,card,context)
-        if context.end_of_round and context.beat_boss and context.main_eval then
-            self.config.tally = self.config.tally + 1
-            if self.config.tally >= self.config.rounds then
-                G.consumeables.config.card_limit = G.consumeables.config.card_limit + 1
-                self.config.tally = 0
-            end
-        end
-    end,
+	calculate = function(self, card, context)
+		if context.end_of_round and context.beat_boss and context.main_eval then
+			self.config.tally = self.config.tally + 1
+			if self.config.tally >= self.config.rounds then
+				G.consumeables.config.card_limit = G.consumeables.config.card_limit + 1
+				self.config.tally = 0
+			end
+		end
+	end,
 }
+
+if CardSleeves then
+	CardSleeves.Sleeve {
+		key = "spire_sleeve",
+		pos = { x = 0, y = 1 },
+		atlas = "SplatDecks",
+		unlocked = true,
+		discovered = true,
+		config = { rounds = 3, tally = 0 },
+		loc_vars = function(self)
+			local key
+			if self.get_current_deck_key() == "b_splat_spire_deck" then
+				key = self.key .. "_alt_spire"
+			end
+			return { key = key, vars = { self.config.rounds } }
+		end,
+		apply = function(self)
+			G.E_MANAGER:add_event(Event({
+				func = function()
+					if self.get_current_deck_key() == "b_splat_spire_deck" then
+						G.GAME.win_ante = G.GAME.win_ante + 3
+						G.GAME.used_vouchers.v_splat_acht = true
+						save_run()
+					else
+						G.GAME.win_ante = G.GAME.win_ante + 1
+						G.consumeables.config.card_limit = G.consumeables.config.card_limit + 1
+						G.GAME.used_vouchers.v_splat_palette = true
+					end
+					save_run()
+					return true
+				end
+			}))
+		end,
+		calculate = function(self, card, context)
+			if context.end_of_round and context.beat_boss and context.main_eval then
+				self.config.tally = self.config.tally + 1
+				if self.config.tally >= self.config.rounds then
+					if self.get_current_deck_key() == "b_splat_spire_deck" then
+						G.jokers.config.card_limit = G.jokers.config.card_limit + 1
+						self.config.tally = 0
+					else
+						G.consumeables.config.card_limit = G.consumeables.config.card_limit + 1
+						self.config.tally = 0
+					end
+				end
+			end
+		end,
+	}
+end

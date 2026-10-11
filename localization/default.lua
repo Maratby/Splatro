@@ -173,21 +173,21 @@ return {
 				["name"] = "The Apocalypse",
 				["text"] = {
 					"Enhances {C:attention}#1#{} selected",
-                    "cards into {C:attention}Mammalized Cardss"
+					"cards into {C:attention}Mammalized Cardss"
 				},
 			},
 			["c_splat_cleansing"] = {
 				["name"] = "The Cleansing",
 				["text"] = {
 					"Enhances {C:attention}#1#{} selected",
-                    "cards into {C:attention}Sanitized Cards"
+					"cards into {C:attention}Sanitized Cards"
 				},
 			},
 			["c_splat_mission"] = {
 				["name"] = "The Mission",
 				["text"] = {
 					"Creates {C:attention}#1#{} {C:splat_chip}Color Chip",
-                    "{C:inactive}(must have room){}"
+					"{C:inactive}(must have room){}"
 				},
 			},
 		},
@@ -196,10 +196,42 @@ return {
 				["name"] = "Spire Deck",
 				["text"] = {
 					"Start with {C:splat_chip,T:v_splat_palette}Palette{} voucher",
-                    "Gain {C:dark_edition}+1 Consumable Slot{} after",
+					"Gain {C:dark_edition}+1 Consumable Slot{} after",
 					"each {C:attention}third{}",
 					"defeated {C:attention}Boss Blind",
 					"{C:attention}+1{} Ante to Win"
+				},
+			},
+		},
+		["Blind"] = {
+			["bl_splat_overlorder"] = {
+				["name"] = "The Overlorder",
+				["text"] = {
+					"{X:dark_edition,C:white}X1.5{} Blind Size{} for each",
+					"Consumable held when selected or",
+					"Consumable used during blind"
+				},
+			},
+		},
+		["Sleeve"] = {
+			["sleeve_splat_spire_sleeve"] = {
+				["name"] = "Spire Sleeve",
+				["text"] = {
+					"Start with {C:splat_chip,T:v_splat_palette}Palette{} voucher",
+					"Gain {C:dark_edition}+1 Consumable Slot{} after",
+					"each {C:attention}third{}",
+					"defeated {C:attention}Boss Blind",
+					"{C:attention}+1{} Ante to Win"
+				},
+			},
+			["sleeve_splat_spire_sleeve_alt_spire"] = {
+				["name"] = "Spire Sleeve | Spire Deck",
+				["text"] = {
+					"Start with {C:splat_chip,T:v_splat_acht}Acht{} voucher",
+					"Gain {C:dark_edition}+1 Joker Slot{} after",
+					"each {C:attention}third{}",
+					"defeated {C:attention}Boss Blind",
+					"{C:attention}+3{} Ante to Win"
 				},
 			},
 		},
@@ -331,8 +363,8 @@ return {
 				["name"] = "Drone-DD",
 				["text"] = {
 					"Creates a {C:tarot}Tarot{} card",
-                    "at {C:attention}end of round",
-                    "{C:inactive}(Must have room)"
+					"at {C:attention}end of round",
+					"{C:inactive}(Must have room)"
 				},
 			},
 			["c_splat_drone_CA"] = {
@@ -340,16 +372,16 @@ return {
 				["text"] = {
 					"Creates a {C:planet}Planet{} card of",
 					"last played {C:attention}Poker Hand{}",
-                    "at {C:attention}end of round",
-                    "{C:inactive}(Must have room)"
+					"at {C:attention}end of round",
+					"{C:inactive}(Must have room)"
 				},
 			},
 			["c_splat_drone_F2"] = {
 				["name"] = "Drone-F2",
 				["text"] = {
 					"Creates a {C:spectral}Spectral{} card",
-                    "at {C:attention}end of round",
-                    "{C:inactive}(Must have room)"
+					"at {C:attention}end of round",
+					"{C:inactive}(Must have room)"
 				},
 			},
 			["c_splat_range_FC"] = {
@@ -363,7 +395,7 @@ return {
 				["name"] = "Range-9A",
 				["text"] = {
 					"{C:attention}+1{} card slot",
-                    "available in shop"
+					"available in shop"
 				},
 			},
 
@@ -491,40 +523,40 @@ return {
 				["name"] = "Chip Pack",
 				["text"] = {
 					"Choose {C:attention}#1#{} of up to",
-                    "{C:attention}#2# {C:splat_chip}Color Chips{} to",
-                    "add to your Consumables"
+					"{C:attention}#2# {C:splat_chip}Color Chips{} to",
+					"add to your Consumables"
 				},
 			},
 			["p_splat_chip_normal_2"] = {
 				["name"] = "Chip Pack",
 				["text"] = {
 					"Choose {C:attention}#1#{} of up to",
-                    "{C:attention}#2# {C:splat_chip}Color Chips{} to",
-                    "add to your Consumables"
+					"{C:attention}#2# {C:splat_chip}Color Chips{} to",
+					"add to your Consumables"
 				},
 			},
 			["p_splat_chip_jumbo_1"] = {
 				["name"] = "Jumbo Chip Pack",
 				["text"] = {
 					"Choose {C:attention}#1#{} of up to",
-                    "{C:attention}#2# {C:splat_chip}Color Chips{} to",
-                    "add to your Consumables"
+					"{C:attention}#2# {C:splat_chip}Color Chips{} to",
+					"add to your Consumables"
 				},
 			},
 			["p_splat_chip_jumbo_2"] = {
 				["name"] = "Jumbo Chip Pack",
 				["text"] = {
 					"Choose {C:attention}#1#{} of up to",
-                    "{C:attention}#2# {C:splat_chip}Color Chips{} to",
-                    "add to your Consumables"
+					"{C:attention}#2# {C:splat_chip}Color Chips{} to",
+					"add to your Consumables"
 				},
 			},
 			["p_splat_chip_mega_1"] = {
 				["name"] = "Mega Chip Pack",
 				["text"] = {
 					"Choose {C:attention}#1#{} of up to",
-                    "{C:attention}#2# {C:splat_chip}Color Chips{} to",
-                    "add to your Consumables"
+					"{C:attention}#2# {C:splat_chip}Color Chips{} to",
+					"add to your Consumables"
 				},
 			},
 		},

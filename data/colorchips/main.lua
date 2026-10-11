@@ -12,6 +12,15 @@ SMODS.Atlas{
     py = 95
 }
 
+SMODS.Atlas{
+    key = "SplatBlinds",
+    atlas_table = "ANIMATION_ATLAS",
+	path = "blinds.png",
+	px = 34,
+	py = 34,
+	frames = 21,
+}
+
 
 SMODS.ConsumableType {
     key = 'c_chip',
@@ -56,6 +65,7 @@ SMODS.load_file("data/colorchips/consumables.lua")()
 SMODS.load_file("data/colorchips/boosters.lua")()
 SMODS.load_file("data/colorchips/decks.lua")()
 SMODS.load_file("data/colorchips/vouchers.lua")()
+SMODS.load_file("data/colorchips/blinds.lua")()
 
 --thank you betmma voucher!!!
 G.FUNCS.can_pick_card = function(e)

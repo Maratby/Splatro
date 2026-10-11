@@ -18,6 +18,7 @@ SMODS.ColorChip {
     name = 'Power-CC',
     atlas = "color_chips",
     pos = { x = 0, y = 0 },
+    attributes = {"xmult"},
     config = { xmult = 0.2 },
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.xmult } }
@@ -44,6 +45,7 @@ SMODS.ColorChip {
     name = 'Power-D4',
     atlas = "color_chips",
     pos = { x = 1, y = 0 },
+    attributes = {"mult", "color_chip", "eight", "three", "rank"},
     config = { mult = 3 },
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.mult } }
@@ -77,6 +79,7 @@ SMODS.ColorChip {
     name = 'Power-E3',
     atlas = "color_chips",
     pos = { x = 2, y = 0 },
+    attributes = {"chips"},
     config = { chips = 100 },
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.chips } }
@@ -101,6 +104,7 @@ SMODS.ColorChip {
     atlas = "color_chips",
     pos = { x = 3, y = 0 },
     config = { extra = 1 },
+    attributes = {"hands", "discard"},
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra } }
     end,
@@ -149,6 +153,7 @@ SMODS.ColorChip {
     name = 'Mobility_A3',
     atlas = "color_chips",
     pos = { x = 4, y = 0 },
+    attributes = {"ante", "skip"},
     config = { tally = 0, max = 5 },
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.tally, card.ability.max } }
@@ -175,6 +180,7 @@ SMODS.ColorChip {
     name = 'Mobility_6A',
     atlas = "color_chips",
     pos = { x = 5, y = 0 },
+    attributes = {"economy", "passive"},
     config = { money_per_hand = 1 },
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.money_per_hand } }
@@ -196,6 +202,7 @@ SMODS.ColorChip {
     atlas = "color_chips",
     pos = { x = 0, y = 1 },
     config = { odds = 4 },
+    attributes = {"economy"},
     loc_vars = function(self, info_queue, card)
         local new_numerator, new_denominator = SMODS.get_probability_vars(card, 1, card.ability.odds, 'Splatro-Lucky-FF')
         return { vars = { new_numerator, new_denominator } }
@@ -222,6 +229,7 @@ SMODS.ColorChip {
     atlas = "color_chips",
     pos = { x = 1, y = 1 },
     config = { odds = 4 },
+    attributes = {"generation", "color_chip"},
     loc_vars = function(self, info_queue, card)
         local new_numerator, new_denominator = SMODS.get_probability_vars(card, 1, card.ability.odds, 'Splatro-Lucky-AF')
         return { vars = { new_numerator, new_denominator } }
@@ -256,6 +264,7 @@ SMODS.ColorChip {
     name = 'Lucky-78',
     atlas = "color_chips",
     pos = { x = 1, y = 1 },
+    attributes = {"xmult"},
     config = { odds = 2, xmult = 2 },
     loc_vars = function(self, info_queue, card)
         local new_numerator, new_denominator = SMODS.get_probability_vars(card, 1, card.ability.odds, 'Splatro-Lucky-78')
@@ -285,6 +294,7 @@ SMODS.ColorChip {
     name = 'Drone-DD',
     atlas = "color_chips",
     pos = { x = 3, y = 1 },
+    attributes = {"generation", "tarot"},
     config = { chips = 100 },
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.chips } }
@@ -324,6 +334,7 @@ SMODS.ColorChip {
     name = 'Drone-CA',
     atlas = "color_chips",
     pos = { x = 4, y = 1 },
+    attributes = {"generation", "planet"},
     config = { chips = 100 },
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.chips } }
@@ -371,6 +382,7 @@ SMODS.ColorChip {
     atlas = "color_chips",
     pos = { x = 5, y = 1 },
     config = { chips = 100 },
+    attributes = {"generation", "spectral"},
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.chips } }
     end,
@@ -407,6 +419,7 @@ SMODS.ColorChip {
     key = 'range_FC',
     name = 'Range-FC',
     atlas = "color_chips",
+    attributes = {"passive", "hand_size"},
     pos = { x = 0, y = 2 },
     config = { handsize = 1 },
     loc_vars = function(self, info_queue, card)
@@ -428,6 +441,7 @@ SMODS.ColorChip {
     name = 'Range-9A)',
     atlas = "color_chips",
     pos = { x = 1, y = 2 },
+    attributes = {"passive", "shop"},
     config = { extra = 1 },
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra } }
@@ -447,6 +461,7 @@ SMODS.ColorChip {
     key = 'range_8F',
     name = 'Range-8F',
     atlas = "color_chips",
+    attributes = {"passive"},
     pos = { x = 2, y = 2 },
     config = { cardselection = 1 },
     loc_vars = function(self, info_queue, card)
@@ -469,6 +484,7 @@ SMODS.ColorChip {
     name = 'Support-FF',
     atlas = "color_chips",
     pos = { x = 4, y = 2 },
+    attributes = {"economy"},
     config = { extra = 3 },
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra } }
@@ -494,6 +510,7 @@ SMODS.ColorChip {
     key = 'support_AA',
     name = 'Support-AA',
     atlas = "color_chips",
+    attributes = {"passive"},
     pos = { x = 4, y = 2 },
     config = { extra = 1 },
     loc_vars = function(self, info_queue, card)
@@ -514,6 +531,7 @@ SMODS.ColorChip {
     key = 'support_A5',
     name = 'Support-A5',
     atlas = "color_chips",
+    attributes = {"passive"},
     pos = { x = 5, y = 2 },
     config = { extra = 1 },
     loc_vars = function(self, info_queue, card)
@@ -534,6 +552,7 @@ SMODS.ColorChip {
     key = 'power_S1',
     name = 'Power-S1',
     atlas = "color_chips",
+    attributes = {"xmult", "xchips", "color_chip"},
     cost = 10,
     pos = { x = 0, y = 3 },
     config = { x = 2 },
@@ -565,6 +584,7 @@ SMODS.ColorChip {
     key = 'mobility_S2',
     name = "Mobility-S2",
     atlas = "color_chips",
+    attributes = {"skip", "hand_size", "scaling"},
     config = { extra = { slots = 0 } },
     pos = { x = 1, y = 3 },
     cost = 10,
@@ -604,6 +624,7 @@ SMODS.ColorChip {
     key = 'lucky_S3',
     name = 'Lucky-S3',
     atlas = "color_chips",
+    attributes = {"chance_mod"},
     cost = 10,
     pos = { x = 2, y = 3 },
     config = { odds = 4, chancemod = 2 },
@@ -649,6 +670,7 @@ SMODS.ColorChip {
     key = 'drone_S4',
     name = 'Drone-S4',
     atlas = "color_chips",
+    attributes = {"modify_card","editions"},
     cost = 10,
     pos = { x = 3, y = 3 },
     config = {},
@@ -689,6 +711,7 @@ SMODS.ColorChip {
     key = 'range_S5',
     name = 'Range-S5',
     atlas = "color_chips",
+    attributes = {"retrigger", "color_chip"},
     cost = 10,
     pos = { x = 4, y = 3 },
     config = {},
@@ -724,6 +747,7 @@ SMODS.ColorChip {
     name = 'Support-S6',
     atlas = "color_chips",
     cost = 10,
+    attributes = {"ante"},
     pos = { x = 5, y = 3 },
     config = { advance = false, number = 1, max = 2},
     hidden = true,

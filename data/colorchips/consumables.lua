@@ -2,6 +2,7 @@ SMODS.Consumable {
     key = 'mission',
     set = 'Tarot',
     discovered = false,
+    attributes = { "generation", },
     cost = 4,
     pos = { x = 6, y = 0 },
     atlas = "SplatConsumables",
@@ -38,6 +39,7 @@ SMODS.Consumable {
     pos = { x = 2, y = 0 },
     atlas = "SplatConsumables",
     name = "Smollusk",
+    attributes = { "destroy_card", "modify_card", "editions" },
     discovered = false,
     cost = 8,
     can_use = function(self, card)
@@ -66,6 +68,7 @@ SMODS.Consumable {
     pos = { x = 5, y = 0 },
     atlas = "SplatConsumables",
     name = "Ricochet",
+    attributes = { "destroy_card", "generation" },
     discovered = false,
     cost = 8,
     can_use = function(self, card)
